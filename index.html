@@ -229,7 +229,7 @@ function calcular() {
   const pedagio = parseFloat(document.getElementById('pedagio').value) || 0;
   const kmExc = Math.max(0, km - kmFree);
   const total = saida + (kmExc * kmValor) + pedagio;
-  document.getElementById('km_exc_display').value = kmExc > 0 ? kmExc + ' km' : '0 km';
+  document.getElementById('km_exc_display').value = kmExc > 0 ? parseFloat(kmExc.toFixed(2)) + ' km' : '0 km';
   document.getElementById('total').textContent = 'R$ ' + total.toFixed(2).replace('.', ',');
   return { saida, km, kmFree, kmValor, pedagio, kmExc, total };
 }
